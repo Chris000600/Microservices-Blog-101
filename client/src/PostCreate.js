@@ -7,9 +7,11 @@ const PostCreate = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    await axios.post('http://posts.com:4000/posts', { title }).catch((err) => {
-      console.log(err.message);
-    });
+    await axios
+      .post('http://posts.com/posts/create', { title })
+      .catch((err) => {
+        console.log(err.message);
+      });
 
     setTitle('');
   };
